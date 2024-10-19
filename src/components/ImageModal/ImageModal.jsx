@@ -1,6 +1,7 @@
 import React from "react";
 import ReactDOM from "react-dom";
 import Modal from "react-modal";
+import css from "./ImageModal.module.css";
 
 // Налаштування стилю для модального вікна
 Modal.setAppElement("#root"); // Для доступності
@@ -23,7 +24,7 @@ const ImageModal = ({ isOpen, onRequestClose, image }) => {
         },
       }}
     >
-      {image && <img src={image} alt="Large view" />}
+      {image && <img className={css.image} src={image} alt="Large view" />}
     </Modal>
   );
 };

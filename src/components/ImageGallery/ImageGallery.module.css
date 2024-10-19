@@ -1,6 +1,21 @@
 .list {
-  display: flex;
-  flex-wrap: wrap;
-  list-style: none;
-  gap: 8px;
+  display: flex; /* Використовуємо flexbox для вирівнювання */
+  flex-wrap: wrap; /* Дозволяємо елементам переходити на новий рядок */
+  padding: 0; /* Прибираємо відступи */
+  margin: 0; /* Прибираємо відступи */
+  list-style-type: none; /* Видаляємо маркери списку */
+}
+.list li {
+  width: 200px; /* Встановлюємо фіксовану ширину для карток */
+  height: 200px; /* Встановлюємо фіксовану висоту для карток */
+  margin: 10px; /* Відстань між картками */
+  display: flex; /* Використовуємо flexbox для вирівнювання вмісту */
+  flex-direction: column; /* Вертикальне вирівнювання вмісту */
+  justify-content: center; /* Центрування по вертикалі */
+  align-items: center; /* Центрування по горизонталі */
+  border: 1px solid #cd9ffc9e; /* Додаємо обводку для карток */
+  border-radius: 8px; /* Закруглені кути */
+  overflow: hidden; /* Сховуємо все, що виходить за межі картки */
+  box-shadow: 0 2px 5px rgba(0, 0, 0, 0.1); /* Легка тінь */
+  cursor: pointer; /* Змінюємо курсор, коли наведено на картку */
 }
