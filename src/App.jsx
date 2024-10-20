@@ -9,6 +9,8 @@ import Loader from "./components/Loader/Loader";
 import ErrorMessage from "./components/ErrorMessage/ErrorMessage";
 import LoadMoreBtn from "./components/LoadMoreBtn/LoadMoreBtn";
 import ImageModal from "./components/ImageModal/ImageModal";
+import { ToastContainer } from "react-toastify";
+import "react-toastify/dist/ReactToastify.css";
 function App() {
   const [photos, setPhotos] = useState(null);
   const [loading, setLoading] = useState(false);
@@ -81,9 +83,10 @@ function App() {
 
   return (
     <>
+      <ToastContainer />
       <SearchBar onSearch={onSearch} />
       {loading && <Loader />}
-      <ErrorMessage error={error} />
+      {error && <ErrorMessage error={error} />}
       <ImageGallery photos={photos} onImageClick={openModal} />
       {photos !== null && <LoadMoreBtn onClick={loadMoreImages} />}
       <ImageModal

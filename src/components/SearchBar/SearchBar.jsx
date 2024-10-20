@@ -1,10 +1,18 @@
 import React from "react";
 import { useState } from "react";
 import css from "./SearchBar.module.css";
+import { toast } from "react-toastify";
 const SearchBar = ({ onSearch }) => {
   const [searchTerm, setSearchTerm] = useState("");
   const handleSubmit = (event) => {
     event.preventDefault(); // Запобігаємо перезавантаженню сторінки
+    // Перевірка, чи є поле пошуку порожнім
+    if (searchTerm.trim() === "") {
+      // Викликаю метод toast для показу повідомлення про помилку
+      toast.error("Будь ласка, введіть запит для пошуку.");
+      return; // Виходимо з функції, якщо поле порожнє
+    }
+
     onSearch(searchTerm); // Викликаємо функцію для передачі значення
   };
 
