@@ -1,10 +1,13 @@
-import React from "react";
+import React, { FC, FormEvent } from "react";
 import { useState } from "react";
 import css from "./SearchBar.module.css";
 import { toast } from "react-toastify";
-const SearchBar = ({ onSearch }) => {
+
+type Props = { onSearch: (searchTerm: string) => void };
+
+const SearchBar: FC<Props> = ({ onSearch }) => {
   const [searchTerm, setSearchTerm] = useState("");
-  const handleSubmit = (event) => {
+  const handleSubmit = (event: FormEvent) => {
     event.preventDefault(); // Запобігаємо перезавантаженню сторінки
     // Перевірка, чи є поле пошуку порожнім
     if (searchTerm.trim() === "") {

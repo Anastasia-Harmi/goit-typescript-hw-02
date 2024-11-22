@@ -1,7 +1,11 @@
-import React from "react";
+import React, { FC } from "react";
 import css from "./ImageCard.module.css";
-
-const ImageCard = ({ photo, onClick }) => {
+import { Iphoto } from "../../types/Iphoto";
+type Props = {
+  photo: Iphoto;
+  onClick: () => void;
+};
+const ImageCard: FC<Props> = ({ photo, onClick }) => {
   return (
     <>
       <li className={css.item} key={photo.id} id={photo.id}>

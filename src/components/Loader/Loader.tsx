@@ -1,6 +1,6 @@
-import React from "react";
+import React, { FC } from "react";
 import { DNA } from "react-loader-spinner";
-const Loader = () => {
+const Loader: FC = () => {
   return (
     <DNA
       visible={true}
@@ -9,7 +9,6 @@ const Loader = () => {
       ariaLabel="dna-loading"
       wrapperStyle={{}}
       wrapperClass="dna-wrapper"
-      color="pink"
     />
   );
 };

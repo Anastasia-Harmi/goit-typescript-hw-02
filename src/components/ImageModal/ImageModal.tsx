@@ -1,4 +1,4 @@
-import React from "react";
+import React, { FC } from "react";
 import ReactDOM from "react-dom";
 import Modal from "react-modal";
 import css from "./ImageModal.module.css";
@@ -6,7 +6,12 @@ import css from "./ImageModal.module.css";
 // Налаштування стилю для модального вікна
 Modal.setAppElement("#root"); // Для доступності
 
-const ImageModal = ({ isOpen, onRequestClose, image }) => {
+type Props = {
+  isOpen: boolean;
+  onRequestClose: () => void;
+  image: string | null;
+};
+const ImageModal: FC<Props> = ({ isOpen, onRequestClose, image }) => {
   return (
     <Modal
       isOpen={isOpen}
